@@ -18,9 +18,11 @@ dfpower <- transform(dfpower, DateTime = strptime(paste(Date, Time),  "%d/%m/%Y 
 # subset results to days 2007-02-01, 2007-02-02
 dfpowsub <- dfpower[which(dfpower$DateTime >= "2007-02-01" & dfpower$DateTime < "2007-02-03"), ]
 
+
 # Plot2 | produce plot2 and copy to plot2.png
-with(dfpowsub, plot(DateTime, Global_active_power, type = "l",
-                    ylab = "Global Active Power (kilowatts)") )
+par(mar = c(4, 4, 2, 0), oma = c(1, 1, 1, 1))
+with(dfpowsub, plot(DateTime, Global_active_power, type = "l", cex.lab = 0.75, cex.axis = 0.75,
+                    xlab = "", ylab = "Global Active Power (kilowatts)") )
 dev.copy(png, "plot2.png")
 dev.off()
 

@@ -25,7 +25,7 @@ with(dfpowsub, plot(DateTime, Sub_metering_1, type = "l", col = "black",
                     xlab = "", ylab ="Energy sub metering", cex.axis = 0.75, cex.lab = .75))
 with(dfpowsub, lines(DateTime, Sub_metering_2, type = "l", col = "red"))
 with(dfpowsub, lines(DateTime, Sub_metering_3, type = "l", col = "blue"))
-par(font = 2)
+par(font = 1)
 legend("topright", col = c("black", "red", "blue"), cex = 0.7,
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
        lty=c(1,1,1))
